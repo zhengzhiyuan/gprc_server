@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zzy.rpc.proto.user.message";
+option java_outer_classname = "UserDtoProto";
+
+
+message UserProtoRequest {
+  int32 id = 1;
+}
+
+message UserProtoResponse {
+  int32 age = 1;
+  string name = 2;
+}
+

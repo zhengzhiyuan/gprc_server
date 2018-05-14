@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zzy.rpc.proto.user.service";
+option java_outer_classname = "UserSimpleProto";
+
+import "user_message.proto";
+
+service UserSimpleService {
+	rpc GetUser(UserProtoRequest) returns (UserProtoResponse) {}
+}
