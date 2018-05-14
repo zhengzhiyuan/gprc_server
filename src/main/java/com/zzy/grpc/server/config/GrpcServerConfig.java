@@ -44,7 +44,7 @@ public class GrpcServerConfig {
         ServerBuilder<?> builder = ServerBuilder.forPort(SRERVER_PORT);
         for (BindableService service : services) {
             builder.addService(service);
-            logger.info("Adding rpc service: {}", service);
+            logger.info("Adding rpc service: {}", service.getClass());
         }
         Server server = builder.build();
         return server;
