@@ -13,10 +13,11 @@ public class ServiceProperties {
     private final Grpc grpc = new Grpc();
 
     /**
-     * grpc配置 
+     * grpc配置
      */
     public static class Grpc {
         private Integer port;
+        private String host;
 
         public Integer getPort() {
             return port;
@@ -24,6 +25,14 @@ public class ServiceProperties {
 
         public void setPort(Integer port) {
             this.port = port;
+        }
+
+        public String getHost() {
+            return host;
+        }
+
+        public void setHost(String host) {
+            this.host = host;
         }
     }
 

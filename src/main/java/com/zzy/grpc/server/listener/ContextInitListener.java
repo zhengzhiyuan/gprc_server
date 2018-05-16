@@ -20,7 +20,7 @@ public class ContextInitListener implements ApplicationListener<ContextRefreshed
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ContextInitListener.class);
 
-    private AtomicBoolean initFlag = new AtomicBoolean(true);
+    private AtomicBoolean initFlag = new AtomicBoolean(false);
 
     @Autowired
     private Environment env;
@@ -31,7 +31,7 @@ public class ContextInitListener implements ApplicationListener<ContextRefreshed
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        if (initFlag.getAndSet(false) != true) {
+        if (initFlag.getAndSet(true) == false) {
             grpcServerConfig.startGrpcServer();
             return;
         }

@@ -70,8 +70,8 @@ public class GrpcServerConfig {
         executorService.execute(() -> {
             try {
                 server.start();
-                server.awaitTermination();
                 logger.info("grpc started port: {}", server.getPort());
+                server.awaitTermination();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             } catch (Throwable e) {
